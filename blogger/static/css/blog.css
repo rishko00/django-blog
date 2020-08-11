@@ -1,0 +1,33 @@
+.header{
+background-color:#ff9400;
+ margin: -8px;
+ padding: 20px 20px 20px 40px;
+text-align:center;
+font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+
+
+.post{
+text-align:left;
+padding-bottom: 40px;
+}
+
+.post .title {
+font-family: Comic Sans MS, Comic Sans, cursive;
+
+}
+
+.post .txt{
+font-family: Times, Times New Roman, serif;
+font-size:22px;
+}
+
+.post .publ{
+font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.page{
+font-family: Comic Sans MS, Comic Sans, cursive;
+text-align:center;
+}

@@ -1,0 +1,35 @@
+{% load static %}
+<html>
+    <head>
+         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+         <div class = "header">
+             <h1>Blog</h1>
+            </div>
+    </head>
+<body>
+
+{% for post in post %}
+<div class = "post">
+         <div class = "title"><h1> {{ post.title }}</h1></div>
+        <div class = "txt"><p>{{ post.text|linebreaksbr }}</p></div>
+         <div class = "publ"><p>published: {{ post.published_date }}</p></div>
+    </div>
+{% endfor %}
+
+<h1>Add comment</h1>
+<form method="POST">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+
+{% for comm in comments %}
+<div class = "comment">
+        <div class = "txt"><p>{{ comm.text|linebreaksbr }}</p></div>
+         <div class = "publ"><p>published: {{ comm.published_date }}</p></div>
+    </div>
+
+{% endfor %}
+
+
+</body>
+</html>
