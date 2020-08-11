@@ -2,7 +2,6 @@ from django.shortcuts import render
 import requests
 from .models import Post, PostForm, Comment, CommentForm
 from django.utils import timezone
-from django.core.paginator import Paginator
 
 def post_list(request):
     if request.method == "POST":
@@ -15,9 +14,6 @@ def post_list(request):
     else:
         form = PostForm()
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-    #p = Paginator(posts, 7)
-    #page = request.GET.get('page')
-    #p_post = p.page(page)
     return render(request, 'blogger/post_list.html', {'posts': posts, 'form': form})
 
 def post_comments(request, post_id):
